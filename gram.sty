@@ -1,4 +1,4 @@
- %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %       
+ %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %        
  %%%%%%%%%%%%%%%%%%%%%  Packages   %%%%%%%%%%%%%%%%%%%%%%
     %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %
     
@@ -40,7 +40,7 @@
     \usepackage{wrapfig}
     \usepackage{relsize} 
     
-    %   %   %   %   %   %   %   %   %   %   %   %   %   %   %        
+    %   %   %   %   %   %   %   %   %   %   %   %   %   %   %         
     %%%%%%%%%%%%%%%%%%%%%    Colors   %%%%%%%%%%%%%%%%%%%%%%%
     %   %   %   %   %   %   %   %   %   %   %   %   %   %   %
     \usepackage{color}
@@ -76,11 +76,7 @@
     \definecolor{myblue2}{HTML}{4c99ee}
     
     %%%% Footnote %%%%%
-\renewcommand{\thempfootnote}{\ \textcolor{grammagenta}{\arabic{mpfootnote}}}
-
-\renewcommand\thefootnote{\ \textcolor{grammagenta}{\arabic{footnote}}}
-
-
+     \renewcommand{\thempfootnote}{\ \tiny\textcolor{grammagenta}{\arabic{mpfootnote}}}
 
     \usepackage{footnote}
 \usepackage{etoolbox}
@@ -227,8 +223,7 @@
     \renewcommand{\contentsname}{}
     
     %%%%%%%%%%%%%%%%%%%%%
-    %   %   %   %   %   %   %   %   %   %   %   %   %   %   %        
-    %%%%%%%%%%%%%%%%%%%%%    Boxes   %%%%%%%%%%%%%%%%%%%%
+    %   %   %   %   %   %   %   %   %   %   %   %   %   %   %         %%%%%%%%%%%%%%%%%%%%%    Boxes   %%%%%%%%%%%%%%%%%%%%
     %   %   %   %   %   %   %   %   %   %   %   %   %   %   %
     \usepackage[many]{tcolorbox}
     \tcbuselibrary{theorems}
@@ -505,7 +500,7 @@
     borderline west={4pt}{0pt}{gramyellow},
     colback=gramyellow!10!white,
     sharp corners,
-    title={Problem~\thetcbcounter:~[{#1}]},
+    title={Problem~\thetcbcounter},
     fonttitle=\large\bfseries\color{gramyellow!75!black}\monts,
     colbacktitle=gramyellow!10!white,
     }
@@ -514,26 +509,37 @@
 \AfterEndEnvironment{problem}{\spewnotes}
     
     %%%%%%%%%%%   Solution    %%%%%%%%%%%%%
-    
-    \newtcolorbox{solution}{%
-    empty,title={Solution},attach boxed title to top left,
-    boxed title style={empty,size=minimal,toprule=2pt,top=4pt,
-    overlay={\draw[gramblue,line width=2pt]
-    ([yshift=-1pt]frame.north west)--([yshift=-1pt]frame.north east);}},
-    coltitle=gramblue,fonttitle=\Large\bfseries\monts,
-    before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
-    breakable,pad at break*=0mm,vfill before first,
-    overlay unbroken={\draw[gramblue,line width=1pt]
-    ([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
-    --([xshift=-0.5pt]frame.south east)--(frame.south west); },
-    overlay first={\draw[gramblue,line width=1pt]
-    ([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
-    --([xshift=-0.5pt]frame.south east); },
-    overlay middle={\draw[gramblue,line width=1pt] ([xshift=-0.5pt]frame.north east)
-    --([xshift=-0.5pt]frame.south east); },
-    overlay last={\draw[gramblue,line width=1pt] ([xshift=-0.5pt]frame.north east)
-    --([xshift=-0.5pt]frame.south east)--(frame.south west);},%
+    \newcounter{solution}
+    \newtcolorbox[use counter=solution]{solution}[1]{
+    enhanced,
+    boxrule=0pt,frame hidden,
+    borderline west={4pt}{0pt}{gramyellow},
+    colback=gramyellow!10!white,
+    sharp corners,
+    title={Solution~\thetcbcounter},
+    fonttitle=\large\bfseries\color{gramyellow!75!black}\monts,
+    colbacktitle=gramyellow!10!white,
     }
+   % \newtcolorbox{solution}{%
+   % empty,title={Solution},attach boxed title to top left,
+   % boxed title style={empty,size=minimal,toprule=2pt,top=4pt,
+   % overlay={\draw[gramblue,line width=2pt]
+   % ([yshift=-1pt]frame.north west)--([yshift=-1pt]frame.north east);}},
+   % coltitle=gramblue,fonttitle=\Large\bfseries\monts,
+   % before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
+  %  breakable,pad at break*=0mm,vfill before first,
+ %   overlay unbroken={\draw[gramblue,line width=1pt]
+ %   ([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+ %   --([xshift=-0.5pt]frame.south east)--(frame.south west); },
+ %   overlay first={\draw[gramblue,line width=1pt]
+%    ([yshift=-1pt]title.north east)--([xshift=-0.5pt,yshift=-1pt]title.north-|frame.east)
+%    --([xshift=-0.5pt]frame.south east); },
+ %   overlay middle={\draw[gramblue,line width=1pt] ([xshift=-0.5pt]fram.north east)
+  %  --([xshift=-0.5pt]frame.south east); },
+  %  overlay last={\draw[gramblue,line width=1pt] ([xshift=-0.5pt]frame.north east)
+  %  --([xshift=-0.5pt]frame.south east)--(frame.south west);},%
+ %   }
+    
     
     %%%%%%%%%%%%%    Table Of Contents   %%%%%%%%%%%%%%
     
