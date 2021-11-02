@@ -1,5 +1,4 @@
- %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %        
- %%%%%%%%%%%%%%%%%%%%%  Packages   %%%%%%%%%%%%%%%%%%%%%%
+ %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %         %%%%%%%%%%%%%%%%%%%%%  Packages   %%%%%%%%%%%%%%%%%%%%%%
     %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %   %
     
     \ProvidesPackage{gram}
@@ -20,11 +19,11 @@
     \usepackage{fontawesome}
     \usepackage{paralist}
     \usepackage{mathpazo}
-    \usepackage{csquotes}
     \usepackage{parskip}
     \usepackage{epigraph}
     \usepackage{ulem}
-    
+    \usepackage{fvextra}
+    \usepackage{csquotes}
     \usepackage{rotating}
     \usepackage{fancyhdr}
     \pagestyle{fancy}
@@ -40,8 +39,7 @@
     \usepackage{wrapfig}
     \usepackage{relsize} 
     
-    %   %   %   %   %   %   %   %   %   %   %   %   %   %   %         
-    %%%%%%%%%%%%%%%%%%%%%    Colors   %%%%%%%%%%%%%%%%%%%%%%%
+    %   %   %   %   %   %   %   %   %   %   %   %   %   %   %         %%%%%%%%%%%%%%%%%%%%%    Colors   %%%%%%%%%%%%%%%%%%%%%%%
     %   %   %   %   %   %   %   %   %   %   %   %   %   %   %
     \usepackage{color}
     \usepackage{xcolor}
@@ -128,12 +126,12 @@
     
     
     
-    \renewcommand*{\sectionformat}%
-    				{\normalfont\Huge{{\S}\thesection{.}}\enskip}
-    			\renewcommand*{\subsectionformat}%
-    				{\normalfont\Large{{\S}\thesubsection{.}}\enskip}
-    			\renewcommand*{\subsubsectionformat}%
-    				{\normalfont\large{{\S}\thesubsubsection{.}}\enskip}
+%    \renewcommand*{\sectionformat}%
+%    				{\normalfont\Huge{{\S}\thesection{.}}\enskip}
+%    			\renewcommand*{\subsectionformat}%
+%    				{\normalfont\Large{{\S}\thesubsection{.}}\enskip}
+%    			\renewcommand*{\subsubsectionformat}%
+%    				{\normalfont\large{{\S}\thesubsubsection{.}}\enskip}
     
     
     
@@ -227,7 +225,7 @@
     %   %   %   %   %   %   %   %   %   %   %   %   %   %   %
     \usepackage[many]{tcolorbox}
     \tcbuselibrary{theorems}
-    \tcbuselibrary{skins,xparse,minted,listings}
+    \tcbuselibrary{skins,xparse,listings}
     \tcbuselibrary{breakable} % Use this in every box 
     \usetikzlibrary{shadows}
     
@@ -539,6 +537,44 @@
   %  overlay last={\draw[gramblue,line width=1pt] ([xshift=-0.5pt]frame.north east)
   %  --([xshift=-0.5pt]frame.south east)--(frame.south west);},%
  %   }
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     %%%%%%%%%%%%%    Table Of Contents   %%%%%%%%%%%%%%
